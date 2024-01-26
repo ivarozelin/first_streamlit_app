@@ -21,10 +21,10 @@ streamlit.dataframe(fruits_to_show)
 
 #New Section do display fruityvice api response
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + 'kiwi')
 streamlit.header("Fruityvice Fruit Advice!")
-streamlit.text(fruityvice_response.json())
 
 #expand the data in a reading format
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
+
